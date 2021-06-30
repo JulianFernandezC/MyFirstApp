@@ -15,24 +15,29 @@ namespace MyFirstApp.WhileLoop
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            var student = new Student();
-            student.StudentId = Convert.ToInt32(txtStudentId.Text);
-            student.Name = txtName.Text;
-            student.Surname = txtSurname.Text;
-            student.Age = Convert.ToInt32(txtAge.Text);
+            var student = new Student
+            {
+                StudentId = Convert.ToInt32(txtStudentId.Text),
+                Name = txtName.Text,
+                Surname = txtSurname.Text,
+                Age = Convert.ToInt32(txtAge.Text)
+            };
 
-            var studentDictionary = new Dictionary<int, Student>();
-            studentDictionary.Add(student.StudentId, student);
+            var studentDictionary = new Dictionary<Guid, Student>
+            {
+                { student.Guid, student }
+            };
 
             int i = 0;
             while ( i < studentDictionary.Count)
             {
-                KeyValuePair<int, Student>  keyValuePair = studentDictionary.ElementAt(i);
+                KeyValuePair<Guid, Student>  keyValuePair = studentDictionary.ElementAt(i);
                 if(keyValuePair.Value.Name.Equals("Pepe"))
-                    MessageBox.Show(keyValuePair.Value.Name + " " + keyValuePair.Value.Surname);
+                    MessageBox.Show("Guid: " + keyValuePair.Key + " , Nombre:" + keyValuePair.Value.Name + " " + keyValuePair.Value.Surname);
 
                 i++;
             }
+            MessageBox.Show("El número de estudiantes es: " + Student.STUDENT_COUNTER);
         }
     }
 }

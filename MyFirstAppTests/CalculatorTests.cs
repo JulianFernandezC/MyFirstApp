@@ -1,10 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MyFirstApp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace MyFirstApp.Tests
 {
@@ -15,28 +10,28 @@ namespace MyFirstApp.Tests
         public void AddTest()
         {
             Calculator calculator = new Calculator();
-            Assert.IsTrue(calculator.Add(2, 2) == 4); //tambien se puede pasar un arreglo de valores
+            IsTrue(calculator.Add(2, 2) == 4); //tambien se puede pasar un arreglo de valores
         }
 
         [TestMethod()]
         public void SubstractTest()
         {
             Calculator calculator = new Calculator();
-            Assert.IsTrue(calculator.Substract(2, 2) == 0);
+            IsTrue(calculator.Substract(2, 2) == 0);
         }
 
         [TestMethod()]
         public void MultiplyTest()
         {
             Calculator calculator = new Calculator();
-            Assert.IsTrue(calculator.Multiply(2, 2) == 4);
+            IsTrue(calculator.Multiply(2, 2) == 4);
         }
 
         [TestMethod()]
         public void DivideTest()
         {
             Calculator calculator = new Calculator();
-            Assert.IsTrue(calculator.Divide(2, 2) == 1);
+            IsTrue(calculator.Divide(2, 2) == 1);
         }
     }
 }
