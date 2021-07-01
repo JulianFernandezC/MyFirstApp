@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Inheritance\Person.cs" />
     <Compile Include="Inheritance\Teacher.cs" />
+    
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WhileLoop\frmWhile.cs">
@@ -94,6 +95,7 @@
     <EmbeddedResource Include="Inheritance\frmTeacher.resx">
       <DependentUpon>frmTeacher.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
